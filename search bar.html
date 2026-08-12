@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Tourism in Botswana</title>
+  <style>
+    /* CSS Variables & Global Styles */
+    :root {
+      --primary-color: #0080a7; /* Botswana Sky Blue Accent */
+      --secondary-color: #2b2d42;
+      --bg-color: #f4f7f6;
+      --card-bg: #ffffff;
+      --text-color: #333333;
+      --text-muted: #666666;
+      --border-radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* Hero & Search Header */
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                  url('https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px 80px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    /* Search Bar Design */
+    .search-container {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 16px 24px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .search-input:focus {
+      box-shadow: 0 6px 20px rgba(0, 128, 167, 0.4);
+    }
+
+    /* Main Section Layout */
+    main {
+      max-width: 1200px;
+      margin: -40px auto 40px;
+      padding: 0 20px;
+    }
+
+    .results-count {
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: var(--text-muted);
+    }
+
+    /* Grid Layout for Destination Cards */
+    .destinations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    /* Destination Card Styles */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-tag {
+      align-self: flex-start;
+      background: #e1f5fe;
+      color: var(--primary-color);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: var(--secondary-color);
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 15px;
+      flex-grow: 1;
+    }
+
+    .card-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .card-link:hover {
+      text-decoration: underline;
+    }
+
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 40px;
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header & Search Input -->
+  <header>
+    <h1>Discover Botswana</h1>
+    <p>Find wildlife reserves, salt pans, and heritage sites across the gem of Africa</p>
+    <div class="search-container">
+      <input 
+        type="text" 
+        id="searchInput" 
+        class="search-input" 
+        placeholder="Search places (e.g., Delta, Chobe, Safari, Desert)..."
+        onkeyup="filterDestinations()"
+      >
+    </div>
+  </header>
+
+  <!-- Destinations Container -->
+  <main>
+    <div class="destinations-grid" id="destinationsGrid">
+      
+      <!-- Card 1 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=600&q=80" alt="Okavango Delta" class="card-img">
+        <div class="card-body">
+          <span class="card-tag">Wetlands & Safari</span>
+          <h2 class="card-title">Okavango Delta</h2>
+          <p class="card-text">A UNESCO World Heritage site known for expansive inland floodplains, mokoro canoe safaris, and abundant wildlife.</p>
+          <a href="#" class="card-link">Learn More &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=600&q=80" alt="Chobe National Park" class="card-img">
+        <div class="card-body">
+          <span class="card-tag">National Park</span>
+          <h2 class="card-title">Chobe National Park</h2>
+          <p class="card-text">Famous for hosting one of the dense concentration of elephants in Africa and sunset riverboat safaris along the Chobe River.</p>
+          <a href="#" class="card-link">Learn More &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80" alt="Makgadikgadi Salt Pans" class="card-img">
+        <div class="card-body">
+          <span class="card-tag">Desert & Landscape</span>
+          <h2 class="card-title">Makgadikgadi Salt Pans</h2>
+          <p class="card-text">One of the largest salt flats in the world, featuring quad-biking, meerkats, and dramatic stargazing landscapes.</p>
+          <a href="#" class="card-link">Learn More &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=600&q=80" alt="Tsodilo Hills" class="card-img">
+        <div class="card-body">
+          <span class="card-tag">Culture & Heritage</span>
+          <h2 class="card-title">Tsodilo Hills</h2>
+          <p class="card-text">Known as the 'Louvre of the Desert', showcasing thousands of ancient San rock art paintings in a spiritual setting.</p>
+          <a href="#" class="card-link">Learn More &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=600&q=80" alt="Central Kalahari Game Reserve" class="card-img">
+        <div class="card-body">
+          <span class="card-tag">Game Reserve</span>
+          <h2 class="card-title">Central Kalahari Game Reserve</h2>
+          <p class="card-text">An immense, remote wilderness featuring iconic black-maned Kalahari lions, cheetahs, and vast open plains.</p>
+          <a href="#" class="card-link">Learn More &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=600&q=80" alt="Moremi Game Reserve" class="card-img">
+        <div class="card-body">
+          <span class="card-tag">Wildlife Reserve</span>
+          <h2 class="card-title">Moremi Game Reserve</h2>
+          <p class="card-text">Located inside the Okavango Delta, covering mopane woodlands and lagoons filled with Africa's Big Five.</p>
+          <a href="#" class="card-link">Learn More &rarr;</a>
+        </div>
+      </article>
+
+      <div class="no-results" id="noResults">No tourism destinations match your search.</div>
+    </div>
+  </main>
+
+  <!-- Interactive Search Script -->
+  <script>
+    function filterDestinations() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+      const noResults = document.getElementById('noResults');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const title = card.querySelector('.card-title').textContent.toLowerCase();
+        const description = card.querySelector('.card-text').textContent.toLowerCase();
+        const tag = card.querySelector('.card-tag').textContent.toLowerCase();
+
+        // Check if query exists in title, tag, or description
+        if (title.includes(input) || description.includes(input) || tag.includes(input)) {
+          card.style.display = "flex";
+          visibleCount++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      // Toggle no results message
+      if (visibleCount === 0) {
+        noResults.style.display = "block";
+      } else {
+        noResults.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

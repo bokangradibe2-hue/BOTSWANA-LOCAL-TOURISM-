@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOTSWANA LOCAL TOURISM - Home</title>
+    <link rel="stylesheet" type="text/css" href="final home.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+                <a href="BK CORRECTED LOGO.png"><img src="BK CORRECTED LOGO.png" alt="Botswana Local Tourism Logo" class="logo-img"></a>
+                
+                <nav>
+                    <ul>
+                        <li><a href="final home.html" class="active">HOME</a></li>
+                        <li><a href="bookings .html">BOOKINGS</a></li>
+                        <li><a href="BK CATER.html">CATERING</a></li>
+                        <li><a href="transport.html">TRANSPORT</a></li>
+                        <li><a href="entertanment.html">ENTERTAINMENT</a></li>
+                    </ul>
+                </nav>
+                <div class="search-bar">
+                    <input type="text" placeholder="SEARCH">
+                    <button class="login-btn"><li><a href="log in 2.html">LOGIN</a></li></button> 
+                </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <video class="hero-video" autoplay controls loop playsinline>
+            <source src="LETS ALL ENJOY LETS TRAVEL THE FUN, THE GREAT BOTSWANA AND SAFE TRAVELS_1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="hero-content">
+            <h1>The Most Enjoyable Way<br>To Travel</h1>
+            <p>
+                Explore Botswana’s beautiful destinations, wildlife,
+                culture, and unforgettable adventures through safe
+                and exciting travel experiences.
+            </p>
+            <a href="#" class="hero-btn">Explore Botswana</a>
+        </div>
+    </section>
+    
+    <main>
+       <!-- Middle Section: Left Stacked Cards & Right Map -->
+       <section class="content-grid-section">
+         <div class="left-cards-column">
+           <div class="info-card">
+             <img src="air botswana.jpeg" alt="Air Botswana">
+             <h3>Air Botswana</h3>
+             <p>National airline offering domestic and regional flight bookings.</p>
+             <a href="http://www.airbotswana.co.bw" target="_blank">www.airbotswana.co.bw</a>
+           </div>
+           
+           <div class="info-card">
+             <img src="tswana food.jpeg" alt="TSWANA FOOD">
+             <h3>Tswana food</h3>
+             <p>Luxuries food here in Botswana best taste ever.</p>
+             <a href="food-of-botswana.html" target="_blank">www.Botswana food.co.bw</a>
+           </div>
+         </div>
+
+         <!-- Right Column: Map (Class changed from map-column to right-map-column to match CSS) -->
+         <div class="right-map-column">
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7524450.415053706!2d18.3688177488031!3d-22.195048208466642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19456565f123f733%3A0x62957b9021f15856!2sBotswana!5e0!3m2!1sen!2sbw!4v1714421542151!5m2!1sen!2sbw" 
+                   width="100%" 
+                   height="100%" 
+                   style="border:0;" 
+                   allowfullscreen="" 
+                   loading="lazy"></iframe>
+         </div>
+       </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-social">
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+        </div>
+        <div class="footer-location">
+          <p>Gaborone, Botswana</p>
+        </div>
+        <div class="footer-email">
+          <p>Email: <a href="mailto:marketing@batswanatourism.co.bw">marketing@batswanatourism.co.bw</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+        :root {
+            --bg-color: #dbc9c3; 
+            --text-color: #333333; 
+            --accent-purple: #6a66a1; 
+            --footer-bg-color: #6CA8D3; 
+            --card-bg: rgba(255, 255, 255, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #dbc9c3; 
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 12px 0;
+            border-top: 1px solid rgba(51,51,51,0.2);
+            border-bottom: 1px solid rgba(51,51,51,0.2);
+            gap: 30px;
+        }
+
+        nav ul { list-style: none; display: flex; gap: 25px; }
+        nav a { text-decoration: none; color: var(--text-color); font-weight: bold; font-size: 0.9rem; }
+        nav a.active { color: var(--footer-bg-color); }
+
+        .search-bar input {
+            padding: 8px;
+            border: 1px solid var(--text-color);
+            background-color: #cbb8b2;
+            width: 150px;
+        }
+
+        .login-btn {
+            background: var(--footer-bg-color);
+            border: none;
+            padding: 8px 20px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .login-btn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .hero-section h1 {
+            color: var(--footer-bg-color);
+            font-size: 2.5rem;
+            font-style: italic;
+            margin-top: 15px;
+        }
+
+        .hero-video {
+            width: 70%;
+            max-height: 350px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero-content p {
+            margin: 10px 0 15px 0;
+            color: #444;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            color: #0000EE;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* Middle Grid Layout (Left Cards & Right Map) */
+        .content-grid-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 40px;
+            width: 100%;
+        }
+
+        .left-cards-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 320px;
+            flex-shrink: 0;
+        }
+
+        .info-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .info-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .info-card h3 {
+            margin: 10px 0 5px 0;
+            font-size: 16px;
+        }
+
+        .info-card p {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .info-card a {
+            font-size: 12px;
+            color: #0000EE;
+            text-decoration: underline;
+        }
+
+        /* Right Map Column Sizing */
+        .right-map-column {
+            flex-grow: 1;
+            height: 600px;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .right-map-column iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer Styling */
+        .site-footer {
+            background-color: #6bb0d8;
+            width: 100%;
+            padding: 30px 40px;
+            box-sizing: border-box;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .footer-social a,
+        .footer-email a {
+            color: #0000EE;
+            text-decoration: underline;
+        }
+
+        .footer-location p,
+        .footer-email p {
+            margin: 0;
+            color: #000000;
+            font-size: 16px;
+        }
+    </style>
+</body>
+</html>

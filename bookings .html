@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BATSWANA LOCALS TOURISM - Bookings</title>
+    <style>
+        :root {
+            --bg-color: #dbc9c3; 
+            --text-color: #333333; 
+            --accent-purple: #6a66a1; 
+            --footer-bg-color: #6CA8D3; 
+            --card-bg: rgba(255, 255, 255, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+         body {
+            background-color: var(--bg-color);
+            color: var(--wireframe-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Centered Header & Single Word Logo --- */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+            gap: 15px;
+        }
+
+        /* --- Logo Styling --- */
+        .logo-img {
+            height: 60px; /* Adjust size as needed */
+            width: auto;
+            display: block;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 12px 0;
+            border-top: 1px solid rgba(51,51,51,0.2);
+            border-bottom: 1px solid rgba(51,51,51,0.2);
+            gap: 30px;
+        }
+
+        nav ul { list-style: none; display: flex; gap: 25px; }
+        nav a { text-decoration: none; color: var(--wireframe-color); font-weight: bold; font-size: 0.9rem; }
+        nav a.active { color: var(--footer-bg-color); }
+
+        .search-login-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .search-bar input {
+            padding: 8px;
+            border: 1px solid var(--text-color);
+            background-color: var(--input-bg-color);
+            width: 150px;
+        }
+
+        .login-btn {
+            background: var(--footer-bg-color);
+            border: none;
+            padding: 8px 20px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+
+        /* --- Sliding Image "Book" Section --- */
+        .slider-wrapper {
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .slides {
+            display: flex;
+            width: 400%; /* 4 images */
+            height: 100%;
+            animation: slideAnimation 16s infinite; /* Automatic sliding */
+        }
+
+        .slides img {
+            width: 25%; /* 100% of the wrapper */
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes slideAnimation {
+            0% { transform: translateX(0%); }
+            20% { transform: translateX(0%); }
+            25% { transform: translateX(-25%); }
+            45% { transform: translateX(-25%); }
+            50% { transform: translateX(-50%); }
+            70% { transform: translateX(-50%); }
+            75% { transform: translateX(-75%); }
+            95% { transform: translateX(-75%); }
+            100% { transform: translateX(0%); }
+        }
+
+        /* --- Transport Booking Grid --- */
+        .content-grid {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .booking-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .booking-card:hover { transform: translateY(-5px); }
+
+        .booking-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .booking-card h3 {
+            color: var(--footer-bg-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .booking-card a {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--text-color);
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid var(--footer-bg-color);
+        }
+/* --- Footer --- */
+        footer {
+            background-color: var(--footer-bg-color);
+            padding: 30px 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+                <a href="BK CORRECTED LOGO.png"><img src="BK CORRECTED LOGO.png" alt="Botswana Local Tourism Logo" class="logo-img"></a>
+                
+                <nav>
+                    <ul>
+                        <li><a href="final home.html">HOME</a></li>
+                        <li><a href="bookings .html" class="active">BOOKINGS</a></li>
+                        <li><a href="BK CATER.html">CATERING</a></li>
+                        <li><a href="transport.html">TRANSPORT</a></li>
+                        <li><a href="entertanment.html">ENTERTAINMENT</a></li>
+                    </ul>
+                </nav>
+                <div class="search-bar">
+                    <input type="text" placeholder="SEARCH">
+                    <button class="login-btn"><li><a href="log in 2.html">LOGIN</a></li></button> 
+                </div>
+        </div>
+    </header>
+
+    <div class="slider-wrapper">
+        <div class="slides">
+            <img src="chobe.jpeg" alt="Chobe River">
+            <img src="safari bookings.jpeg" alt="Safari Jeep">
+            <img src="baobao tree.jpeg" alt="Baobab Tree">
+            <img src="delta.jpeg" alt="Delta Flight">
+        </div>
+    </div>
+
+    <main class="content-grid">
+        
+        <div class="booking-card">
+            <img src="air botswana.png" alt="Air Botswana">
+            <h3>Air Botswana</h3>
+            <p>National airline offering domestic and regional flight bookings.</p>
+            <a href="https://www.airbotswana.co.bw" target="_blank">WWW.AIRBOTSWANA.CO.BW</a>
+        </div>
+
+        <div class="booking-card">
+            <img src="ic .png" alt="Intercape">
+            <h3>Intercape Bus</h3>
+            <p>Luxury coach services connecting Botswana to South Africa and Namibia.</p>
+            <a href="https://www.intercape.co.za" target="_blank">WWW.INTERCAPE.CO.ZA</a>
+        </div>
+
+        <div class="booking-card">
+            <img src="mack air .jpeg" alt="Safari Transport">
+            <h3>Mack Air</h3>
+            <p>The leading charter company for Okavango Delta lodge transfers.</p>
+            <a href="https://www.mackair.co.bw" target="_blank">WWW.MACKAIR.CO.BW</a>
+        </div>
+     <div class="info-card">
+             <img src="accommo.jpeg" alt="Okavango accommodation">
+             <h3>Okavango accommodation</h3>
+             <p>Luxury is found here in Botswana best and suitable as ever.</p>
+             <a href="accommodation okavango.html" target="_blank">www.Okavango.co.bw</a>
+           </div>
+         </div>
+
+        <div class="booking-card">
+            <img src="4N-Thamalakane river.jpeg" alt="4N-Thamalakane river.jpeg">
+            <h3>Thamalakane River</h3>
+            <p>Luxury coach services connecting Botswana to South Africa and Namibia.</p>
+            <a href="thamalakane river lodge.html" target="_blank">Thamalakane River Lodge</a>
+        </div>
+
+        <div class="booking-card">
+            <img src="Sanitas Restaurant.jpeg" alt="tea_garden">
+            <h3>Tea Garden</h3>
+            <p>The leading charter company for Okavango Delta lodge transfers.</p>
+            <a href="tea_garden.html" target="_blank">WWW.Tea Garden.BW</a>
+        </div>
+    </main>
+
+   <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Facebook</a></p>
+            </div>
+            <div class="footer-column">
+                <p>Gaborone, Botswana</p>
+            </div>
+            <div class="footer-column">
+                <p>Email: marketing@batswanatourism.co.bw</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
